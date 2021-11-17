@@ -1,6 +1,6 @@
 {
-    "name": "flutter_clone_gallery",
-    "short_name": "flutter_clone_gallery",
+    "name": "flutter_gallery_clone",
+    "short_name": "flutter_gallery_clone",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

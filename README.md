@@ -1,4 +1,4 @@
-# flutter_clone_gallery
+# flutter_gallery_clone
 
 A new Flutter project.
 
