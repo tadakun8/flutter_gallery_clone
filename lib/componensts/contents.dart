@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gallery_clone/componensts/gallery_card.dart';
 
 class Contents extends StatelessWidget {
   const Contents({Key? key}) : super(key: key);
@@ -7,14 +8,22 @@ class Contents extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      height: 500,
       decoration: BoxDecoration(
-        color: Colors.grey,
+        color: Colors.grey[200],
         border: Border.all(color: Colors.black, width: 1),
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(16),
       ),
-      child: Text(
-        'This is where the gallery will be placed.',
-        style: TextStyle(color: Colors.white),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 64, horizontal: 32),
+        child: Column(
+          children: const [
+            GalleryCard(
+              title: 'Aqua',
+              subtitle: 'producing light blue',
+            )
+          ],
+        ),
       ),
     );
   }
