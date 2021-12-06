@@ -12,7 +12,7 @@ class Contents extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.grey[200],
         border: Border.all(color: Colors.black, width: 1),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(32),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 64, horizontal: 32),
