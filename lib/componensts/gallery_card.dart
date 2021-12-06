@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gallery_clone/shared/constants.dart';
 
 class GalleryCard extends StatelessWidget {
   final String title;
   final String subtitle;
+  final String imagePath;
 
   const GalleryCard({
     Key? key,
     required this.title,
     required this.subtitle,
+    required this.imagePath,
   }) : super(key: key);
 
   @override
@@ -20,9 +21,9 @@ class GalleryCard extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAlias,
       child: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(Constants.galleryCard1),
+            image: AssetImage(imagePath),
             fit: BoxFit.cover,
           ),
         ),

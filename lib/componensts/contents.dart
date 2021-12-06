@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gallery_clone/componensts/gallery_card.dart';
+import 'package:flutter_gallery_clone/componensts/gallery_card_list.dart';
+import 'package:flutter_gallery_clone/shared/constants.dart';
 
 class Contents extends StatelessWidget {
   const Contents({Key? key}) : super(key: key);
@@ -26,10 +27,16 @@ class Contents extends StatelessWidget {
             SizedBox(
               height: 32,
             ),
-            GalleryCard(
-              title: 'Aqua',
-              subtitle: 'producing light blue',
-            )
+            GalleryCardList(galleryImagePathList: [
+              Constants.galleryCard1,
+              Constants.galleryCard2,
+              Constants.galleryCard3,
+              Constants.galleryCard4,
+              Constants.galleryCard5,
+              Constants.galleryCard6,
+            ]),
+            SizedBox(height: 62),
+            Text('サンプル')
           ],
         ),
       ),
