@@ -22,7 +22,7 @@ class GalleryCard extends StatelessWidget {
       child: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(Constants.sample1),
+            image: AssetImage(Constants.galleryCard1),
             fit: BoxFit.cover,
           ),
         ),

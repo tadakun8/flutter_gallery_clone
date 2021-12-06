@@ -15,7 +15,7 @@ class Contents extends StatelessWidget {
         borderRadius: BorderRadius.circular(32),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 64, horizontal: 32),
+        padding: const EdgeInsets.symmetric(vertical: 64, horizontal: 128),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [

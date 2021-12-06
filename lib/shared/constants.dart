@@ -5,5 +5,5 @@ class Constants {
   static const appLogo = assetPath + 'app_logo.png';
 
   static const galleryAssetPath = assetPath + 'gallery/';
-  static const sample1 = galleryAssetPath + 'sample1.jpg';
+  static const galleryCard1 = galleryAssetPath + 'gallery_card_1.jpg';
 }
