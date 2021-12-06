@@ -17,7 +17,15 @@ class Contents extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 64, horizontal: 32),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
+            Text(
+              'ギャラリー',
+              style: TextStyle(fontSize: 24, color: Colors.black),
+            ),
+            SizedBox(
+              height: 32,
+            ),
             GalleryCard(
               title: 'Aqua',
               subtitle: 'producing light blue',

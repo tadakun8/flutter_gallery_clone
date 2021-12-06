@@ -19,40 +19,42 @@ class GalleryCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       clipBehavior: Clip.antiAlias,
-      child: Stack(
-        // fit: StackFit.expand,
-        children: [
-          Image.asset(
-            Constants.sample1,
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(Constants.sample1),
+            fit: BoxFit.cover,
           ),
-          Column(
-            children: [
-              const SizedBox(
-                height: 160,
+        ),
+        width: 450,
+        height: 200,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 130,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 3),
+                    child: Text(
+                      title,
+                      style: const TextStyle(fontSize: 24, color: Colors.black),
+                    ),
+                  ),
+                  Text(
+                    subtitle,
+                    style: const TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 3),
-                      child: Text(
-                        title,
-                        style:
-                            const TextStyle(fontSize: 24, color: Colors.white),
-                      ),
-                    ),
-                    Text(
-                      subtitle,
-                      style: const TextStyle(fontSize: 16, color: Colors.white),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
