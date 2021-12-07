@@ -27,7 +27,6 @@ class GalleryCard extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        width: 450,
         height: 200,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -14,7 +14,7 @@ class GalleryCardList extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: galleryImagePathList.length,
-        // itemExtent: ???,
+        itemExtent: 400,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
