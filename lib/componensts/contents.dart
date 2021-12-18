@@ -27,7 +27,7 @@ class Contents extends StatelessWidget {
             SizedBox(
               height: 32,
             ),
-            GalleryCardList(galleryImagePathList: [
+            GalleryCardList(gallaryImagePathList: [
               Constants.galleryCard1,
               Constants.galleryCard2,
               Constants.galleryCard3,
