@@ -14,6 +14,28 @@ class GalleryCardList extends StatefulWidget {
 }
 
 class _GalleryCardListState extends State<GalleryCardList> {
+  late ScrollController scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
+
+  void moveToGallery(double itemWidth) {
+    scrollController.animateTo(
+      scrollController.offset + itemWidth,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,6 +46,7 @@ class _GalleryCardListState extends State<GalleryCardList> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ListView.builder(
+                controller: scrollController,
                 scrollDirection: Axis.horizontal,
                 itemCount: widget.gallaryImagePathList.length,
                 itemExtent: 400,
@@ -40,8 +63,18 @@ class _GalleryCardListState extends State<GalleryCardList> {
               ),
             ),
           ),
-          const ScrollButton(),
-          const ScrollButton(isEnd: true)
+          GestureDetector(
+            onTap: () {
+              moveToGallery(-60);
+            },
+            child: const ScrollButton(),
+          ),
+          GestureDetector(
+            onTap: () {
+              moveToGallery(60);
+            },
+            child: const ScrollButton(isEnd: true),
+          )
         ],
       ),
     );
