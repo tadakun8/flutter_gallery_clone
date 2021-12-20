@@ -20,6 +20,10 @@ class _GalleryCardListState extends State<GalleryCardList> {
   void initState() {
     super.initState();
     scrollController = ScrollController();
+    // showPreviousButton, showNextButtonの変更検知をするためにこの処理が必要
+    scrollController.addListener(() {
+      setState(() {});
+    });
   }
 
   @override
@@ -38,6 +42,16 @@ class _GalleryCardListState extends State<GalleryCardList> {
 
   @override
   Widget build(BuildContext context) {
+    var showPreviousButton = false;
+    var showNextButton = true;
+
+    // scrollControllerがListViewに紐づいてから処理を行う
+    if (scrollController.hasClients) {
+      showPreviousButton = scrollController.offset > 0;
+      showNextButton =
+          scrollController.offset < scrollController.position.maxScrollExtent;
+    }
+
     return Container(
       height: 200,
       child: Stack(
@@ -63,17 +77,23 @@ class _GalleryCardListState extends State<GalleryCardList> {
               ),
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              moveToGallery(-60);
-            },
-            child: const ScrollButton(),
+          Visibility(
+            visible: showPreviousButton,
+            child: GestureDetector(
+              onTap: () {
+                moveToGallery(-200);
+              },
+              child: const ScrollButton(),
+            ),
           ),
-          GestureDetector(
-            onTap: () {
-              moveToGallery(60);
-            },
-            child: const ScrollButton(isEnd: true),
+          Visibility(
+            visible: showNextButton,
+            child: GestureDetector(
+              onTap: () {
+                moveToGallery(200);
+              },
+              child: const ScrollButton(isEnd: true),
+            ),
           )
         ],
       ),
